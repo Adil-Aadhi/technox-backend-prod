@@ -43,3 +43,7 @@ staticfiles/
 # ======================
 .DS_Store
 Thumbs.db
+
+
+#settibgs-copy
+settings-copy.py
