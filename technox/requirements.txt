@@ -1,0 +1,26 @@
+Django==5.2.8
+
+# Django REST
+djangorestframework
+drf-spectacular
+djangorestframework-simplejwt
+
+# Environment variables
+python-dotenv
+
+# CORS
+django-cors-headers
+
+# PostgreSQL
+psycopg2-binary
+
+# Cloudinary
+cloudinary
+django-cloudinary-storage
+
+# Celery
+celery
+django-celery-results
+
+# Production server
+gunicorn
