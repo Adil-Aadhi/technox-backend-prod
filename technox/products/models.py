@@ -4,7 +4,6 @@ import uuid
 
 # Create your models here.
 class Product(models.Model):
-    id=models.CharField(primary_key=True,max_length=50,default=uuid.uuid4,editable=False)
     name=models.CharField(max_length=255)
     brand=models.CharField(max_length=100)
 

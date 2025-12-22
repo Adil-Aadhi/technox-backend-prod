@@ -11,7 +11,6 @@ from datetime import timedelta
 from dotenv import load_dotenv
 import cloudinary
 
-load_dotenv()
 
 
 mimetypes.add_type('text/css', '.css', True)
@@ -20,12 +19,15 @@ mimetypes.add_type('text/javascript', '.js', True)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+ENV_PATH = BASE_DIR.parent / ".env"
+
+load_dotenv(ENV_PATH)
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
+ALLOWED_HOSTS =os.getenv("ALLOWED_HOSTS", "*").split(",")
 
 
 INSTALLED_APPS = [
@@ -110,11 +112,11 @@ AUTHENTICATION_BACKENDS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv("DB_NAME"),
-        'USER': os.getenv("DB_USER"),
-        'PASSWORD': os.getenv("DB_PASSWORD"),
-        'HOST': os.getenv("DB_HOST"),
-        'PORT': os.getenv("DB_PORT"),
+        'NAME': "technox_db",
+        'USER': "technox_user",
+        'PASSWORD': "Technox_Project2025",
+        'HOST': "technox-db.cn2ksiw8ikom.ap-south-1.rds.amazonaws.com",
+        'PORT': "5432",
     }
 }
 
@@ -145,10 +147,12 @@ CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
+    'https://technox-e-com.vercel.app',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:5173',
+    'https://technox-e-com.vercel.app',
 ]
 
 CORS_ALLOW_HEADERS = [
