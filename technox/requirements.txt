@@ -17,10 +17,12 @@ psycopg2-binary
 # Cloudinary
 cloudinary
 django-cloudinary-storage
+Pillow
 
 # Celery
 celery
 django-celery-results
+redis
 
 # Production server
 gunicorn
