@@ -14,10 +14,11 @@ class WishlistProducts(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self,request,id):
-       
+        print("hi")
         products=Wishlist.objects.select_related('product').filter(user_id=id)
         serializer=WishlistSerializer(products, many=True)
         return Response(serializer.data)
+        
     
     def post(self,request):
         
